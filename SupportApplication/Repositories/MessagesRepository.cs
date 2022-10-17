@@ -21,5 +21,11 @@ namespace SupportApplication.Repositories
             var messages = context.Messages.ToList();
             return messages;
         }
+
+        public void Add(Messages messages)
+        {
+            context.Messages.Add(messages);
+            context.SaveChanges();
+        }
     }
 }

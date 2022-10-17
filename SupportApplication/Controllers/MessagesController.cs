@@ -41,10 +41,13 @@ namespace SupportApplication.Controllers
         // POST: MesaggesController/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create(IFormCollection collection)
+        public ActionResult Create(Messages message)
         {
             try
             {
+                messagesRepository.Add(message);
+
+
                 return RedirectToAction(nameof(Index));
             }
             catch
