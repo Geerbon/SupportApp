@@ -56,19 +56,22 @@ namespace SupportApplication.Controllers
             }
         }
 
-        // GET: MesaggesController/Edit/5
+        //Fix GET: MesaggesController/Edit/5
         public ActionResult Edit(int id)
         {
-            return View();
+            var model = messagesRepository.Get(id);
+            return View(model);
         }
 
         // POST: MesaggesController/Edit/5
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit(int id, IFormCollection collection)
+        public ActionResult Edit(int id, Messages messages)
         {
             try
             {
+                messagesRepository.Update(messages);
+
                 return RedirectToAction(nameof(Index));
             }
             catch
@@ -80,7 +83,9 @@ namespace SupportApplication.Controllers
         // GET: MesaggesController/Delete/5
         public ActionResult Delete(int id)
         {
-            return View();
+            messagesRepository.Delete(id);
+
+            return RedirectToAction(nameof(Index));
         }
 
         // POST: MesaggesController/Delete/5
