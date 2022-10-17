@@ -19,7 +19,7 @@ builder.Services.AddDbContext<ApplicationDbContext>(options =>
 
 
 builder.Services.AddControllersWithViews();
-builder.Services.AddTransient<SupportApplication.Repositories.MessagesRepository>();
+builder.Services.AddTransient<MessagesRepository>();
 
 var app = builder.Build();
 

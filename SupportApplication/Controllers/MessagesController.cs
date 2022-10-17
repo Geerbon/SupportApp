@@ -8,7 +8,7 @@ namespace SupportApplication.Controllers
 {
     public class MessagesController : Controller
     {
-       
+
         private readonly MessagesRepository messagesRepository;
 
         public MessagesController(MessagesRepository messagesRepository)
@@ -21,7 +21,7 @@ namespace SupportApplication.Controllers
         // GET: MesaggesController
         public ActionResult Index()
         {
-           var model =  messagesRepository.GetAllMessages();
+            var model = messagesRepository.GetAllMessages();
 
             return View(model);
         }
