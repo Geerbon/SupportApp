@@ -47,6 +47,11 @@ namespace SupportApplication.Repositories
             return (context.Messages.FirstOrDefault(x => x.Id == id));
         }
 
+        public Messages Details(int id)
+        {
+            return (context.Messages.FirstOrDefault(x => x.Id == id));
+        }
+
 
     }
 }

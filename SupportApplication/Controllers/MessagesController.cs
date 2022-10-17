@@ -29,7 +29,9 @@ namespace SupportApplication.Controllers
         // GET: MesaggesController/Details/5
         public ActionResult Details(int id)
         {
-            return View();
+            var model = messagesRepository.Details(id);
+
+            return View(model);
         }
 
         // GET: MesaggesController/Create
